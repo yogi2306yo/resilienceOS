@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResilienceOS - AI Analysis</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+header{
+background:#1e293b;
+padding:20px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+.container{
+width:80%;
+margin:auto;
+margin-top:40px;
+}
+
+.card{
+
+background:#1e293b;
+
+padding:25px;
+
+border-radius:10px;
+
+box-shadow:0px 0px 10px black;
+
+}
+
+select{
+
+width:100%;
+
+padding:12px;
+
+font-size:16px;
+
+margin-top:15px;
+
+margin-bottom:20px;
+
+}
+
+button{
+
+padding:12px 25px;
+
+background:#2563eb;
+
+border:none;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+border-radius:8px;
+
+}
+
+button:hover{
+
+background:#1d4ed8;
+
+}
+
+#result{
+
+margin-top:30px;
+
+padding:20px;
+
+background:#111827;
+
+border-radius:10px;
+
+display:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+AI Business Impact Analysis
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Select Disruption</h2>
+
+<select id="event">
+
+<option>Machine Failure</option>
+
+<option>Supplier Delay</option>
+
+<option>Cyber Attack</option>
+
+<option>Power Failure</option>
+
+<option>Inventory Shortage</option>
+
+</select>
+
+<button onclick="analyze()">
+
+Analyze
+
+</button>
+
+<div id="result">
+
+<h3>Analysis Completed</h3>
+
+<p id="analysis"></p>
+
+<br>
+
+<button onclick="location.href='recommendation.html'">
+
+View AI Recommendation
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function analyze(){
+
+let event=document.getElementById("event").value;
+
+let msg="";
+
+if(event=="Machine Failure"){
+
+msg="Production disruption detected. Estimated downtime: 4 Hours.";
+
+}
+
+else if(event=="Supplier Delay"){
+
+msg="Supply chain disruption detected. Material shortage expected within 24 Hours.";
+
+}
+
+else if(event=="Cyber Attack"){
+
+msg="Cybersecurity incident detected. Critical business services may be affected.";
+
+}
+
+else if(event=="Power Failure"){
+
+msg="Power outage may interrupt production and logistics operations.";
+
+}
+
+else{
+
+msg="Inventory level is below safety stock. Production planning may be affected.";
+
+}
+
+document.getElementById("analysis").innerHTML=msg;
+
+document.getElementById("result").style.display="block";
+
+}
+
+</script>
+
+</body>
+
+</html>
